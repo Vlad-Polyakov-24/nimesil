@@ -1,0 +1,17 @@
+$colors: (
+        'white':$white,
+        'black':$black,
+        'yellow': $yellow,
+        'dark-blue': $dark-blue,
+);
+
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: #{$color};
+  }
+
+  .bg-#{$name} {
+    background: #{$color};
+  }
+}

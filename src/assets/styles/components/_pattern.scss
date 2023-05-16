@@ -1,0 +1,55 @@
+//titles
+
+.title {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 57px;
+  color: #FFFFFF;
+
+  @include media('<lg') {
+    text-align: center;
+  }
+  @include media('<md') {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 66px;
+
+  @include media('<xl') {
+    font-size: 40px;
+    line-height: 58px;
+  }
+  @include media('<lg') {
+    text-align: center;
+  }
+  @include media('<md') {
+    font-size: 30px;
+    line-height: 44px;
+  }
+  @include media('<xs') {
+    font-size: 20px;
+    line-height: 38px;
+  }
+}
+
+
+//br
+
+.hidden-sp {
+  display: block !important;
+
+  @include media('<md') {
+    display: none !important;
+  }
+}
+
+//text-align
+
+.text-center {
+  text-align: center;
+}

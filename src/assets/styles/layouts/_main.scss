@@ -1,0 +1,599 @@
+.symptoms {
+  padding-top: 85px;
+  background: linear-gradient(180deg, #F8F4F0 0%, #FFFFFF 100%);
+
+  @include media('<xl') {
+    padding-top: 50px;
+  }
+  @include media('<md') {
+    padding-top: 30px;
+  }
+
+  .container {
+    max-width: 1220px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 53px;
+
+    @include media('<lg') {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+  }
+
+  &__img {
+    align-self: flex-end;
+    width: 100%;
+    max-width: 634px;
+
+    @include media('<lg') {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    picture {
+      display: block;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 530px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    @include media('<xl') {
+      padding-top: 10px;
+    }
+    @include media('<lg') {
+      max-width: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, max-content));
+    gap: 25px 75px;
+    margin-top: 43px;
+
+    @include media('<lg') {
+      justify-content: center;
+    }
+    @include media('<md') {
+      margin-top: 20px;
+      gap: 15px 20px;
+    }
+    @include media('<xs') {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 44px;
+
+    @include media('<md') {
+      padding-left: 30px;
+    }
+    @include media('<xs') {
+      padding-left: 20px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('#{$images}icons/check_icon.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include media('<md') {
+        width: 15px;
+        height: 15px;
+      }
+      @include media('<xs') {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      color: $dark-blue;
+
+      @include media('<md') {
+        font-size: 16px;
+        line-height: 23px;
+      }
+      @include media('<xs') {
+        font-size: 12px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+.doctors {
+  position: relative;
+  z-index: 1;
+  min-height: 720px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  background-color: #F8F4F0;
+  overflow: hidden;
+
+  @include media('<xl') {
+    min-height: 500px;
+  }
+  @include media('<lg') {
+    min-height: unset;
+    padding-top: 50px;
+  }
+  @include media('<md') {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -67px;
+    display: block;
+    min-width: calc(869 * 100% / 1440);
+    height: 100%;
+    max-height: 899px;
+    background-image: url('#{$images}doctors/img_bg.svg');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    @include media('<sm') {
+      width: 100%;
+      right: -20px;
+      opacity: .7;
+    }
+  }
+
+  .section-title {
+    @include media('<lg') {
+      text-align: left;
+    }
+  }
+
+  .slider {
+    margin-top: 41px;
+
+    @include media('<md') {
+      margin-top: 20px;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    max-width: 605px;
+
+    @include media('<lg') {
+      max-width: 500px;
+    }
+  }
+
+  &__medic {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+
+    @include media('<md') {
+      margin-top: 30px;
+      gap: 20px;
+    }
+    @include media('<xs') {
+      gap: 10px;
+    }
+  }
+
+  &__medic-img {
+    width: 100%;
+    max-width: 62px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    picture {
+      display: block;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &__medic-desc {
+
+    .name {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: $dark-blue;
+    }
+    .position {
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #918F8D;
+    }
+  }
+
+  &__medic-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    padding: 8px;
+    background-color: $yellow;
+    color: $dark-blue;
+    border-radius: 10px;
+    transition: .2s;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    svg,path {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    min-width: calc(758 * 100% / 1440);
+    height: 100%;
+
+    @include media('<lg') {
+      right: -100px;
+    }
+    @include media('<md') {
+      opacity: .7;
+    }
+
+    picture {
+      display: block;
+
+      @include media('<xxl') {
+        height: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+
+        @include media('<xxl') {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  min-height: 720px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $dark-blue;
+
+  @include media('<xl') {
+    min-height: 500px;
+  }
+  @include media('<md') {
+    min-height: unset;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .container {
+    width: calc(100% - 55px);
+  }
+
+  .slider {
+    margin-top: 30px;
+  }
+
+  .btn {
+    margin-top: 30px;
+  }
+}
+
+.faq {
+  display: flex;
+  align-items: center;
+  padding-top: 117px;
+  padding-bottom: 117px;
+  background: linear-gradient(180deg, #F8F4F0 0%, #FFFFFF 100%);
+
+  @include media('<xl') {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  @include media('<lg') {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @include media('<md') {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 770px;
+    margin-top: 33px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__item {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:not(:first-child) {
+      margin-top: 18px;
+
+      @include media('<md') {
+        margin-top: 13px;
+      }
+    }
+
+    &.active {
+      border-color: #EAE5E0;
+
+      .faq__item-head {
+        background-color: transparent;
+      }
+
+      .faq__item-head-icon {
+        &:after {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+      }
+    }
+  }
+
+  &__item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 24px 19px 33px;
+    background-color: #F1EDE8;
+    color: $dark-blue;
+    cursor: pointer;
+    transition: .4s;
+
+    @include media('<md') {
+      padding: 15px;
+    }
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: currentColor;
+  }
+
+  &__item-head-icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: currentColor;
+      transition: .4s;
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__item-content {
+    padding: 25px 30px;
+    border-top: 1px solid #EAE5E0;
+
+    @include media('<md') {
+      padding: 15px;
+    }
+
+    .text {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: $dark-blue;
+    }
+  }
+}
+
+.instructions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 720px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #F8F4F0;
+  overflow: hidden;
+
+  @include media('<xl') {
+    min-height: 500px;
+  }
+  @include media('<md') {
+    min-height: unset;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    top: 30px;
+    right: -67px;
+    width: calc(869 * 100vw / 1440);
+    height: calc(869 * 100vw / 1440);
+    background-image: url('#{$images}instructions/bg.svg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    @include media('<lg') {
+      width: 80vw;
+      height: 80vw;
+    }
+    @include media('<lg') {
+      width: 900px;
+      height: 900px;
+      left: 10%;
+      right: unset;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @include media('<md') {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 38px;
+    counter-reset: number;
+
+    @include media('<md') {
+      grid-template-columns: repeat(1, minmax(auto, 400px));
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    padding: 34px 20px 50px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+
+    @include media('<md') {
+      padding: 25px 20px;
+    }
+
+    .text {
+      margin-top: 36px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: $dark-blue;
+    }
+  }
+
+  &__item-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background-color: $dark-blue;
+
+    .icon {
+      display: block;
+      width: max-content;
+      max-width: 100%;
+
+      picture {
+        display: block;
+
+        img {
+          display: block;
+          width: auto;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__item-icon-num {
+    position: absolute;
+    left: -19px;
+    bottom: -12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: $yellow;
+
+    &:before {
+      counter-increment: number;
+      content: counter(number, decimal-leading-zero);
+      display: block;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      color: $dark-blue;
+    }
+  }
+}

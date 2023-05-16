@@ -1,0 +1,234 @@
+.slider {
+  position: relative;
+
+  &--doctors {
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      left: unset;
+      right: unset;
+      margin: 0;
+    }
+    .swiper-button-prev {
+    }
+    .swiper-button-next {
+    }
+
+    .slide {
+      .text {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $dark-blue;
+
+        @include media('<md') {
+          margin-top: 20px;
+          font-size: 16px;
+          line-height: 23px;
+        }
+        @include media('<xs') {
+          font-size: 13px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+
+  &--feedback {
+    padding-left: 1px;
+    padding-right: 1px;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 44px;
+      height: 44px;
+    }
+    .swiper-button-prev {
+      left: -22px;
+    }
+    .swiper-button-next {
+      right: -22px;
+    }
+
+    .slide {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      border-radius: 10px;
+      padding: 2px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.02) 100%);
+
+      &__inner {
+        position: relative;
+        height: 100%;
+        padding: 50px 40px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+        border-radius: 10px;
+
+        @include media('<xl') {
+          padding: 30px;
+        }
+        @include media('<md') {
+          padding: 25px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $dark-blue;
+          border-radius: 10px;
+        }
+      }
+
+      &__head {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include media('<md') {
+          gap: 15px;
+        }
+
+        .name {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 25px;
+          color: $white;
+
+          @include media('<md') {
+            font-size: 16px;
+            line-height: 23px;
+          }
+          @include media('<xs') {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        .date {
+          margin-top: 6px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+          color: rgba(255, 255, 255, .4);
+
+          @include media('<md') {
+            font-size: 14px;
+            line-height: 20px;
+          }
+          @include media('<xs') {
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+
+      &__head-img {
+        width: 62px;
+        height: 62px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media('<xs') {
+          width: 50px;
+          height: 50px;
+        }
+        picture {
+          display: block;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+      &__body {
+        margin-top: 36px;
+
+        @include media('<md') {
+          margin-top: 20px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 11px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    @include media('<md') {
+      position: relative;
+      bottom: 0;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    padding: 9px;
+    background-color: $yellow;
+    border-radius: 10px;
+    color: $dark-blue;
+    transition: .2s;
+
+    &:after {
+      content: '';
+      display: none;
+    }
+
+    svg,path {
+      display: block;
+      width: 100%;
+    }
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    transform: rotate(180deg);
+
+    @media (hover: hover) {
+      &:hover {
+        transform: rotate(180deg) scale(1.1);
+      }
+    }
+  }
+  .swiper-button-next {
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+

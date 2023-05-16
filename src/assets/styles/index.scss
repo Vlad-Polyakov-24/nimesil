@@ -13,10 +13,20 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/app";
+@import "utils/fonts";
+@import "utils/colors";
 
 /* !* components *! */
 
 @import "components/header";
-@import "components/footer";
+@import "components/buttons";
+@import "components/form";
+@import "components/timer";
+@import "components/pattern";
+@import "components/slider";
+@import "components/accordion";
+@import "components/modal";
 
 /* !* layout parts *! */
+@import "layouts/main";
+@import "layouts/intro";

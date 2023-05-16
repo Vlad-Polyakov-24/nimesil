@@ -1,0 +1,253 @@
+.intro {
+  min-height: 720px;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include media('<lg') {
+    min-height: 500px;
+  }
+  @include media('<md') {
+    min-height: unset;
+    padding-top: 65px;
+    padding-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    @include media('<lg') {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 62px;
+
+    @include media('<lg') {
+      align-items: center;
+      padding-top: 0;
+    }
+  }
+
+  &__caption {
+    padding: 10px 18px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 11px;
+
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      color: $white;
+
+      @include media('<md') {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+
+    + h1 {
+      margin-top: 17px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-top: 38px;
+
+    @include media('<md') {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &.revers {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+
+      @include media('<lg') {
+        flex-direction: row;
+        align-items: center;
+      }
+      @include media('<md') {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 354px;
+
+    @include media('<xl') {
+      max-width: 300px;
+    }
+
+    picture {
+      display: block;
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 49px;
+
+    @include media('<md') {
+      padding-left: 25px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 1px;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      background-image: url('#{$images}icons/star_icon.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include media('<md') {
+        top: 3px;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 31px;
+
+      @include media('<lg') {
+        margin-top: 20px;
+      }
+      @include media('<md') {
+        margin-top: 15px;
+      }
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      color: $white;
+
+      @include media('<md') {
+        font-size: 15px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    max-width: 370px;
+    flex-shrink: 0;
+    padding: 46px 38px 43px;
+    background-color: #F8F4F0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include media('<lg') {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include media('<md') {
+      padding: 25px 20px;
+    }
+
+    &.sending {
+      .intro__form-animation {
+        display: flex;
+      }
+    }
+
+    .form {
+      + .timer {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  &__form-head {
+    h2 {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 33px;
+      text-align: center;
+    }
+    p {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    + .form {
+      margin-top: 32px;
+    }
+  }
+
+  &__form-animation {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: rgba(0,0,0, .5);
+  }
+
+  &__form-animation-img {
+    width: 100%;
+    max-width: 170px;
+    opacity: .8;
+    animation-name: sending_anim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    picture {
+      display: block;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes sending_anim {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

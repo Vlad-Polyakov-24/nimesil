@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
@@ -25,9 +25,715 @@
     <div class="wrapper" id="wrapper">
       <%= _.template(require('./parts/header.html'))() %>
 
-      <div class="app" id="app"></div>
+      <div class="app" id="app">
+          <section class="intro" style="background-image: url('assets/images/intro/bg_01.webp')">
+              <div class="container">
+                  <div class="intro__inner">
+                      <div class="intro__content">
+                          <div class="intro__caption">
+                              <p>
+                                  <span class="text-yellow">Say Goodbye</span> to Pain, Embrace Comfort Today!
+                              </p>
+                          </div>
+                          <h1 class="title">
+                              Experience the Nimesil<br>
+                              Revolution: Unleash a New<br>
+                              World of Comfort and Relief
+                          </h1>
+                          <div class="intro__row">
+                              <div class="intro__img">
+                                  <picture>
+                                      <img src="assets/images/intro/img_01.webp" alt="nimesil img">
+                                  </picture>
+                              </div>
+                              <ul class="intro__list">
+                                  <li class="intro__item">
+                                      <p>
+                                          Fast Shipping
+                                      </p>
+                                  </li>
+                                  <li class="intro__item">
+                                      <p>
+                                          100% Satisfaction Guaranteed
+                                      </p>
+                                  </li>
+                                  <li class="intro__item">
+                                      <p>
+                                          100% Satisfaction Guaranteed
+                                      </p>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="intro__form">
+                          <div class="intro__form-head">
+                              <h2 class="text-dark-blue">
+                                  Order Nimesil Now
+                              </h2>
+                              <p class="text-dark-blue">
+                                  Enjoy our Exclusive Online<br>
+                                  Offer - Buy 2, <span class="text-yellow">Get 1 FREE!</span>
+                              </p>
+                          </div>
+                          <form action="/" class="form" method="POST" data-form>
+                              <div class="form__group">
+                                  <label class="label">
+                                      <input type="text" class="input" id="client-name" name="name" placeholder="Name" required>
+                                  </label>
+                              </div>
+                              <div class="form__group">
+                                  <label class="label">
+                                      <input type="tel" class="input" id="client-phone" name="phone" placeholder="Phone" required>
+                                  </label>
+                              </div>
+                              <div class="form__price">
+                                  <p class="old">
+                                      29.99$
+                                  </p>
+                                  <p class="new">
+                                      19.99$
+                                  </p>
+                              </div>
+                              <button type="submit" class="btn btn--center">
+                                  Order with 25% discount
+                              </button>
+                          </form>
+                          <div class="timer" data-timer>
+                              <p class="timer__caption">
+                                  Benefit program ends in
+                              </p>
+                              <div class="timer__clock" data-countdown>
+                                  <div class="timer__clock-item">
+                                      <p data-timer-hours></p>
+                                  </div>
+                                  <div class="timer__clock-item">
+                                      <p data-timer-minutes></p>
+                                  </div>
+                                  <div class="timer__clock-item">
+                                      <p data-timer-seconds></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="intro__form-animation">
+                              <div class="intro__form-animation-img">
+                                  <picture>
+                                      <img src="assets/images/sending.webp" alt="sending icon">
+                                  </picture>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section class="symptoms">
+              <div class="container">
+                  <div class="symptoms__inner">
+                      <div class="symptoms__img">
+                          <picture>
+                              <img src="assets/images/symptoms/img_01.webp" alt="girl with pain">
+                          </picture>
+                      </div>
+                      <div class="symptoms__content">
+                          <h2 class="section-title text-dark-blue">
+                              Do you have the following symptoms?
+                          </h2>
+                          <ul class="symptoms__list">
+                              <li class="symptoms__item">
+                                  <p>
+                                      Tooth pain
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Acute pain
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Headache
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Mild migraine
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Backache
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Muscle pain
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Postoperative pain
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Rheumatic Arthritis
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Dysmenorrhea
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Osteoarthritis
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Menstrual pain
+                                  </p>
+                              </li>
+                              <li class="symptoms__item">
+                                  <p>
+                                      Fever
+                                  </p>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section class="doctors">
+              <div class="doctors__bg-img">
+                  <picture>
+                      <img src="assets/images/doctors/img_02.webp" alt="doctor bg">
+                  </picture>
+              </div>
+              <div class="container">
+                  <div class="doctors__inner">
+                      <h2 class="section-title text-dark-blue">
+                          What do doctors<br class="hidden-sp">
+                          say about us
+                      </h2>
+                      <div class="slider slider--doctors">
+                          <div class="swiper swiper--doctors">
+                              <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                      <div class="slide">
+                                          <p class="text">
+                                              “As a medical professional, I can confidently recommend Nimesulide for patients seeking effective and fast-acting pain relief. In my experience, it has consistently provided relief for various types of pain, including tooth pain, with minimal side effects. It's a reliable choice for those in need of a powerful yet gentle pain management solution.”
+                                          </p>
+                                          <div class="doctors__medic">
+                                              <div class="doctors__medic-img">
+                                                  <picture>
+                                                      <img src="assets/images/doctors/img_01.jpg" alt="Anjelika Jevoline">
+                                                  </picture>
+                                              </div>
+                                              <div class="doctors__medic-desc">
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="position">
+                                                      Therapist
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                      <div class="slide">
+                                          <p class="text">
+                                              “As a medical professional, I can confidently recommend Nimesulide for patients seeking effective and fast-acting pain relief. In my experience, it has consistently provided relief for various types of pain, including tooth pain, with minimal side effects. It's a reliable choice for those in need of a powerful yet gentle pain management solution.”
+                                          </p>
+                                          <div class="doctors__medic">
+                                              <div class="doctors__medic-img">
+                                                  <picture>
+                                                      <img src="assets/images/doctors/img_01.jpg" alt="Anjelika Jevoline">
+                                                  </picture>
+                                              </div>
+                                              <div class="doctors__medic-desc">
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline2
+                                                  </h3>
+                                                  <p class="position">
+                                                      Therapist
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                      <div class="slide">
+                                          <p class="text">
+                                              “As a medical professional, I can confidently recommend Nimesulide for patients seeking effective and fast-acting pain relief. In my experience, it has consistently provided relief for various types of pain, including tooth pain, with minimal side effects. It's a reliable choice for those in need of a powerful yet gentle pain management solution.”
+                                          </p>
+                                          <div class="doctors__medic">
+                                              <div class="doctors__medic-img">
+                                                  <picture>
+                                                      <img src="assets/images/doctors/img_01.jpg" alt="Anjelika Jevoline">
+                                                  </picture>
+                                              </div>
+                                              <div class="doctors__medic-desc">
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline3
+                                                  </h3>
+                                                  <p class="position">
+                                                      Therapist
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                      <div class="slide">
+                                          <p class="text">
+                                              “As a medical professional, I can confidently recommend Nimesulide for patients seeking effective and fast-acting pain relief. In my experience, it has consistently provided relief for various types of pain, including tooth pain, with minimal side effects. It's a reliable choice for those in need of a powerful yet gentle pain management solution.”
+                                          </p>
+                                          <div class="doctors__medic">
+                                              <div class="doctors__medic-img">
+                                                  <picture>
+                                                      <img src="assets/images/doctors/img_01.jpg" alt="Anjelika Jevoline">
+                                                  </picture>
+                                              </div>
+                                              <div class="doctors__medic-desc">
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline4
+                                                  </h3>
+                                                  <p class="position">
+                                                      Therapist
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="slider__navigation">
+                              <div class="swiper-button-prev swiper-button-prev--doctors">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M14.4301 5.93005L20.5001 12.0001L14.4301 18.0701" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                      <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                              </div>
+                              <div class="swiper-button-next swiper-button-next--doctors">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M14.4301 5.93005L20.5001 12.0001L14.4301 18.0701" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                      <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section class="feedback">
+              <div class="container">
+                  <h2 class="section-title text-white text-center">
+                      Feedback from our clients
+                  </h2>
+                  <div class="slider slider--feedback">
+                      <div class="swiper swiper--feedback">
+                          <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_01.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_02.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "I was skeptical at first, but Nimesulide really works! It has made a huge difference in managing my chronic pain. I'm so grateful to have found this product."
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_03.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "Nimesulide has been a lifesaver! I've tried numerous pain relievers, but this one truly stands out. It's effective, gentle on my stomach, and allows me to keep up with my active lifestyle."
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
 
-      <%= _.template(require('./parts/footer.html'))() %>
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_01.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_02.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "I was skeptical at first, but Nimesulide really works! It has made a huge difference in managing my chronic pain. I'm so grateful to have found this product."
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide">
+                                  <div class="slide">
+                                      <div class="slide__inner">
+                                          <div class="slide__head">
+                                              <div class="slide__head-img">
+                                                  <picture>
+                                                      <img src="assets/images/feedback/img_03.jpg" alt="slide img">
+                                                  </picture>
+                                              </div>
+                                              <div>
+                                                  <h3 class="name">
+                                                      Anjelika Jevoline
+                                                  </h3>
+                                                  <p class="date">
+                                                      20  april 2023
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="slide__body">
+                                              <p>
+                                                  "Nimesulide has been a lifesaver! I've tried numerous pain relievers, but this one truly stands out. It's effective, gentle on my stomach, and allows me to keep up with my active lifestyle."
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="swiper-button-prev swiper-button-prev--feedback">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.4301 5.93005L20.5001 12.0001L14.4301 18.0701" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <div class="swiper-button-next swiper-button-next--feedback">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.4301 5.93005L20.5001 12.0001L14.4301 18.0701" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                  </div>
+                  <a href="#" class="btn btn--center">
+                      Order with 25% discount
+                  </a>
+              </div>
+          </section>
+          <section class="faq">
+              <div class="container">
+                  <h2 class="section-title text-dark-blue text-center">
+                      Frequently Asked Questions
+                  </h2>
+                  <ul class="faq__list" data-accordion>
+                      <li class="faq__item">
+                          <div class="faq__item-head" data-accordion-trigger>
+                              <h3 class="faq__item-title">How does Nimesukide work?</h3>
+                              <span class="faq__item-head-icon"></span>
+                          </div>
+                          <div data-accordion-content>
+                              <div class="faq__item-content">
+                                  <p class="text">
+                                      "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                  </p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="faq__item">
+                          <div class="faq__item-head" data-accordion-trigger>
+                              <h3 class="faq__item-title">How does Nimesukide work?</h3>
+                              <span class="faq__item-head-icon"></span>
+                          </div>
+                          <div data-accordion-content>
+                              <div class="faq__item-content">
+                                  <p class="text">
+                                      "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                  </p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="faq__item">
+                          <div class="faq__item-head" data-accordion-trigger>
+                              <h3 class="faq__item-title">How does Nimesukide work?</h3>
+                              <span class="faq__item-head-icon"></span>
+                          </div>
+                          <div data-accordion-content>
+                              <div class="faq__item-content">
+                                  <p class="text">
+                                      "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                  </p>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="faq__item">
+                          <div class="faq__item-head" data-accordion-trigger>
+                              <h3 class="faq__item-title">How does Nimesukide work?</h3>
+                              <span class="faq__item-head-icon"></span>
+                          </div>
+                          <div data-accordion-content>
+                              <div class="faq__item-content">
+                                  <p class="text">
+                                      "Nimesulide has been a game-changer for me! The pain relief is fast-acting, and I can finally enjoy my daily activities without any discomfort. Highly recommend!"
+                                  </p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </section>
+          <section class="instructions">
+              <div class="container">
+                  <div class="instructions__head">
+                      <h2 class="section-title text-dark-blue">
+                          Instructions for use
+                      </h2>
+                      <a href="#" class="btn btn--form">
+                          Description of the preparation
+                      </a>
+                  </div>
+                  <ul class="instructions__list">
+                      <li class="instructions__item">
+                          <div class="instructions__item-icon">
+                              <span class="icon">
+                                  <picture>
+                                      <img src="assets/images/instructions/icon_01.svg" alt="icon">
+                                  </picture>
+                              </span>
+                              <span class="instructions__item-icon-num"></span>
+                          </div>
+                          <p class="text">
+                              Obtain and adhere to doctor's prescribed dosage and instructions.
+                          </p>
+                      </li>
+                      <li class="instructions__item">
+                          <div class="instructions__item-icon">
+                              <span class="icon">
+                                  <picture>
+                                      <img src="assets/images/instructions/icon_02.svg" alt="icon">
+                                  </picture>
+                              </span>
+                              <span class="instructions__item-icon-num"></span>
+                          </div>
+                          <p class="text">
+                              Carefully dissolve the sachet's contents in a glass of water.
+                          </p>
+                      </li>
+                      <li class="instructions__item">
+                          <div class="instructions__item-icon">
+                              <span class="icon">
+                                  <picture>
+                                      <img src="assets/images/instructions/icon_03.svg" alt="icon">
+                                  </picture>
+                              </span>
+                              <span class="instructions__item-icon-num"></span>
+                          </div>
+                          <p class="text">
+                              Immediately consume the fully mixed solution for optimal results.
+                          </p>
+                      </li>
+                  </ul>
+              </div>
+          </section>
+          <section class="intro" style="background-image: url('assets/images/intro/bg_02.webp')">
+              <div class="container">
+                  <div class="intro__inner">
+                      <div class="intro__content">
+                          <h2 class="title">
+                              Experience the Nimesil<br>
+                              Revolution: Unleash a New<br>
+                              World of Comfort and Relief
+                          </h2>
+                          <div class="intro__row revers">
+                              <div class="intro__img">
+                                  <picture>
+                                      <img src="assets/images/intro/img_01.webp" alt="nimesil img">
+                                  </picture>
+                              </div>
+                              <ul class="intro__list">
+                                  <li class="intro__item">
+                                      <p>
+                                          Fast Shipping
+                                      </p>
+                                  </li>
+                                  <li class="intro__item">
+                                      <p>
+                                          100% Satisfaction Guaranteed
+                                      </p>
+                                  </li>
+                                  <li class="intro__item">
+                                      <p>
+                                          100% Satisfaction Guaranteed
+                                      </p>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="intro__form">
+                          <div class="intro__form-head">
+                              <h2 class="text-dark-blue">
+                                  Order Nimesil Now
+                              </h2>
+                              <p class="text-dark-blue">
+                                  Enjoy our Exclusive Online<br>
+                                  Offer - Buy 2, <span class="text-yellow">Get 1 FREE!</span>
+                              </p>
+                          </div>
+                          <form action="/" class="form" method="POST" data-form>
+                              <div class="form__group">
+                                  <label class="label">
+                                      <input type="text" class="input" id="client-name-2" name="name" placeholder="Name" required>
+                                  </label>
+                              </div>
+                              <div class="form__group">
+                                  <label class="label">
+                                      <input type="tel" class="input" id="client-phone-2" name="phone" placeholder="Phone" required>
+                                  </label>
+                              </div>
+                              <div class="form__price">
+                                  <p class="old">
+                                      29.99$
+                                  </p>
+                                  <p class="new">
+                                      19.99$
+                                  </p>
+                              </div>
+                              <button type="submit" class="btn btn--center">
+                                  Order with 25% discount
+                              </button>
+                          </form>
+                          <div class="timer" data-countdown>
+                              <p class="timer__caption">
+                                  Benefit program ends in
+                              </p>
+                              <div class="timer__clock">
+                                  <div class="timer__clock-item">
+                                      <p data-timer-hours></p>
+                                  </div>
+                                  <div class="timer__clock-item">
+                                      <p data-timer-minutes></p>
+                                  </div>
+                                  <div class="timer__clock-item">
+                                      <p data-timer-seconds></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="intro__form-animation">
+                              <div class="intro__form-animation-img">
+                                  <picture>
+                                      <img src="assets/images/sending.webp" alt="sending icon">
+                                  </picture>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
     </div>
+
+  <div class="modal" data-modal>
+      <div class="modal__inner">
+          <div class="modal__body">
+              <h2>
+                  Your data has been sent successfully!<br>
+                  Wait for the call!
+              </h2>
+              <button type="button" class="modal__btn" data-modal-close>
+                  OK!
+              </button>
+          </div>
+      </div>
+  </div>
   </body>
 </html>

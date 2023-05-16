@@ -1,1 +1,25 @@
 /*  header */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
+
+  .logo {
+    display: block;
+    width: 100%;
+    max-width: 110px;
+
+    &__link {
+      display: block;
+      width: 100%;
+
+      svg,path {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

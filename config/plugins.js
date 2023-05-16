@@ -63,7 +63,11 @@ module.exports = {
     ...allHtmlChunk,
     new MiniCssExtractPlugin({ filename: `assets/styles/[name]${IS_HASH ? '.[contenthash]' : ''}.css` }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src/assets/images', to: 'assets/images/' }],
+      patterns: [
+          { from: 'src/assets/images', to: 'assets/images/' },
+          { from: 'src/mail.php' },
+          { from: 'src/PHPMailer', to: 'PHPMailer/' },
+      ],
     }),
   ],
 
