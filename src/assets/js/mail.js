@@ -1,30 +1,40 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-
 document.addEventListener('DOMContentLoaded', () => {
    const forms =  document.querySelectorAll('[data-form]');
-   const modal = document.querySelector('[data-modal]');
-   const modalClose = modal.querySelector('[data-modal-close]');
+   const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+   const modalClose = document.querySelectorAll('[data-modal-close]');
+   const modals = document.querySelectorAll('.modal');
+   let id;
 
-   const showModal = () => {
-       modal.classList.add('show');
-       disableBodyScroll(modal);
-   }
+    const showModal = (modal) => {
+        modal.classList.add('show');
+        disableBodyScroll(modal);
+    }
 
-   const hideModal = () => {
-       modal.classList.remove('show');
-       enableBodyScroll(modal);
-   }
+    const closeModal = () => {
+        modals.forEach(modal => {
+            modal.classList.remove('show');
+            enableBodyScroll(modal);
+        });
+    }
 
-   modal.addEventListener('click', (e) => {
-        const target = e.target.closest('.modal__inner');
+    modalClose.forEach(btn => btn.addEventListener('click', closeModal));
 
-        if (!target) {
-            hideModal();
+    document.addEventListener('click', (e) => {
+        let innerTarget = e.target.closest('.modal__wrap');
+        if (!innerTarget) {
+            closeModal();
         }
-    });
+    }, true);
 
-   modalClose.addEventListener('click', hideModal);
+    for (let i = 0; i < modalTriggers.length; i++) {
+        modalTriggers[i].addEventListener('click', () => {
+            id = modalTriggers[i].dataset.modalTrigger;
+            const modal = document.getElementById(id);
+            showModal(modal);
+        });
+    }
 
    forms.forEach((form) => {
         form.addEventListener('submit', formSend);
@@ -42,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 formParent.classList.remove('sending');
-                showModal();
+                showModal(document.getElementById('modal_01'));
                 form.reset();
             } else {
                 alert('Error');

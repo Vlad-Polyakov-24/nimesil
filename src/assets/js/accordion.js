@@ -1,5 +1,6 @@
 function accordion() {
     const accordions = document.querySelectorAll('[data-accordion]');
+    if (!accordions) return;
 
     const open = (content, item) => {
         item.classList.add('active');

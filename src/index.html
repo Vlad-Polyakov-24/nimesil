@@ -26,7 +26,7 @@
       <%= _.template(require('./parts/header.html'))() %>
 
       <div class="app" id="app">
-          <section class="intro" style="background-image: url('assets/images/intro/bg_01.webp')">
+          <section class="intro" style="background-image: url('assets/images/intro/bg_01.png')">
               <div class="container">
                   <div class="intro__inner">
                       <div class="intro__content">
@@ -43,7 +43,7 @@
                           <div class="intro__row">
                               <div class="intro__img">
                                   <picture>
-                                      <img src="assets/images/intro/img_01.webp" alt="nimesil img">
+                                      <img src="assets/images/intro/img_01.png" alt="nimesil img">
                                   </picture>
                               </div>
                               <ul class="intro__list">
@@ -130,7 +130,7 @@
                   <div class="symptoms__inner">
                       <div class="symptoms__img">
                           <picture>
-                              <img src="assets/images/symptoms/img_01.webp" alt="girl with pain">
+                              <img src="assets/images/symptoms/img_01.png" alt="girl with pain">
                           </picture>
                       </div>
                       <div class="symptoms__content">
@@ -206,7 +206,7 @@
           <section class="doctors">
               <div class="doctors__bg-img">
                   <picture>
-                      <img src="assets/images/doctors/img_02.webp" alt="doctor bg">
+                      <img src="assets/images/doctors/bg_02.png" alt="doctor bg">
                   </picture>
               </div>
               <div class="container">
@@ -578,9 +578,9 @@
                       <h2 class="section-title text-dark-blue">
                           Instructions for use
                       </h2>
-                      <a href="#" class="btn btn--form">
+                      <button class="btn btn--form" data-modal-trigger="modal_02">
                           Description of the preparation
-                      </a>
+                      </button>
                   </div>
                   <ul class="instructions__list">
                       <li class="instructions__item">
@@ -625,7 +625,7 @@
                   </ul>
               </div>
           </section>
-          <section class="intro" style="background-image: url('assets/images/intro/bg_02.webp')">
+          <section class="intro" style="background-image: url('assets/images/intro/bg_02.png')">
               <div class="container">
                   <div class="intro__inner">
                       <div class="intro__content">
@@ -637,7 +637,7 @@
                           <div class="intro__row revers">
                               <div class="intro__img">
                                   <picture>
-                                      <img src="assets/images/intro/img_01.webp" alt="nimesil img">
+                                      <img src="assets/images/intro/img_01.png" alt="nimesil img">
                                   </picture>
                               </div>
                               <ul class="intro__list">
@@ -722,16 +722,30 @@
       </div>
     </div>
 
-  <div class="modal" data-modal>
-      <div class="modal__inner">
-          <div class="modal__body">
-              <h2>
-                  Your data has been sent successfully!<br>
-                  Wait for the call!
-              </h2>
-              <button type="button" class="modal__btn" data-modal-close>
-                  OK!
-              </button>
+  <div class="modal modal--form" id="modal_01">
+      <div class="modal__wrap">
+          <div class="modal__inner">
+              <div class="modal__body">
+                  <h2 class="modal__title">
+                      Your data has been sent successfully!<br>
+                      Wait for the call!
+                  </h2>
+                  <button type="button" class="modal__btn" data-modal-close>
+                      OK!
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal" id="modal_02">
+      <div class="modal__wrap">
+          <div class="modal__inner">
+              <div class="modal__body">
+                  <button type="button" class="modal__close" data-modal-close></button>
+                  <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquam amet, atque consectetur distinctio dolorem, doloremque ea est eum explicabo fuga iste magni natus neque nobis officia quibusdam quo reiciendis repellat rerum sapiente, sequi sunt tempora ullam velit voluptatum? Accusantium alias assumenda, consequuntur dolores eos magni natus nesciunt quibusdam saepe tempore. Ad dicta nisi nobis, optio perspiciatis saepe totam ut voluptatibus. Consectetur consequatur dignissimos dolor, ea error est expedita, fugit in ipsa, magnam modi nemo porro possimus ratione repellendus repudiandae voluptas! Ab aspernatur assumenda at deleniti dignissimos eaque error facere facilis ipsum laboriosam libero, minus nam officia perferendis praesentium quae quaerat quas quos similique voluptas? Architecto asperiores assumenda, aut autem cum delectus dicta dolor doloremque ducimus exercitationem illo in inventore necessitatibus nemo odio odit perferendis provident quae quas quod sapiente sed temporibus totam voluptas voluptate voluptatem voluptatum? A at distinctio est hic id incidunt ipsum obcaecati possimus, sed velit. Aspernatur eligendi ipsam nostrum odit repudiandae saepe totam ut velit. Accusamus amet architecto at commodi cupiditate debitis dolore earum eligendi ex laborum minus nemo officiis, optio placeat quas, quos ratione repellendus sapiente tempora, voluptates. Ad architecto assumenda at dolorem, eius enim excepturi ipsam nesciunt nihil odit praesentium, quos ratione, sed? Adipisci assumenda blanditiis corporis, deleniti dignissimos doloremque hic iste modi mollitia nesciunt omnis perspiciatis quia rem sequi tenetur vero, voluptas! Ab alias asperiores consectetur cumque deleniti dolore exercitationem minima quos tempora. Blanditiis doloremque explicabo minima quas soluta sunt. Accusantium ad aliquid aut consectetur culpa dolorum ducimus ipsum, labore non nostrum odit perferendis possimus praesentium qui quibusdam quos repellendus voluptatum! Accusantium alias aut beatae culpa dicta dolores doloribus ea error harum hic illo incidunt, laudantium natus non nostrum numquam officia provident quibusdam quos repudiandae sed similique sunt tempore tenetur ut. Delectus doloribus error hic itaque iusto! Accusamus ad aliquam asperiores dolor doloribus ea, eum illo ipsa iusto repellat similique sint veniam. Cupiditate, non, ratione! Adipisci aliquam architecto cum doloribus enim et, eveniet fugiat fugit hic incidunt laudantium molestias natus nostrum officiis optio repudiandae sapiente. Amet consectetur dolorum in ipsam magni odit quos, reiciendis suscipit. Animi aspernatur, rerum. Culpa est impedit incidunt, inventore minima non officia pariatur quas quis voluptatum. Atque cumque, dicta, dolor ea eius enim error fugiat illo iure nobis, nostrum omnis quam quibusdam similique sit tempore voluptates. Aliquid at consequatur dicta eligendi hic, laboriosam libero, nam nesciunt nulla officiis perferendis, tempora ut. Adipisci aperiam debitis dolorum eveniet fugit, illum incidunt magni, necessitatibus possimus quidem, repellat voluptas voluptate voluptatum. Dolore fugit nemo quam! Aliquam error ex ipsa magni maiores. Accusantium aut cumque, deleniti, distinctio explicabo id in ipsum itaque, labore magnam maiores quisquam repellendus sapiente sed tempore vero vitae voluptatem voluptatibus. Accusamus eius et eveniet iure laudantium, maxime provident reprehenderit sint sunt voluptate! Accusantium corporis dolore excepturi, libero maiores nesciunt placeat quo voluptate. Accusantium adipisci aspernatur assumenda cumque delectus ducimus ex facere fugit hic laboriosam laudantium minima molestiae necessitatibus non officia omnis, perferendis possimus provident quae quaerat quas qui quibusdam quis quisquam sed sequi tempore tenetur totam velit voluptas voluptates.
+                  </p>
+              </div>
           </div>
       </div>
   </div>

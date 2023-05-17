@@ -162,7 +162,7 @@
     min-width: calc(869 * 100% / 1440);
     height: 100%;
     max-height: 899px;
-    background-image: url('#{$images}doctors/img_bg.svg');
+    background-image: url('#{$images}doctors/bg_01.svg');
     background-size: cover;
     background-position: top left;
     background-repeat: no-repeat;
@@ -170,7 +170,7 @@
     @include media('<sm') {
       width: 100%;
       right: -20px;
-      opacity: .7;
+      opacity: .6;
     }
   }
 
@@ -276,14 +276,19 @@
     z-index: -1;
     top: 0;
     right: 0;
-    min-width: calc(758 * 100% / 1440);
+    width: calc(758 * 100% / 1440);
     height: 100%;
 
     @include media('<lg') {
       right: -100px;
+      width: auto;
+      min-width: calc(758 * 100% / 1440);
     }
     @include media('<md') {
-      opacity: .7;
+      opacity: .3;
+    }
+    @include media('<sm') {
+      right: -300px;
     }
 
     picture {
