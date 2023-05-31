@@ -22,8 +22,10 @@ try {
     $mail->SMTPAuth   = true;                               //Enable SMTP authentication
     $mail->Username   = 'nimesil2023@meta.ua';              //SMTP username
     $mail->Password   = 'NIMesil2023';                      //SMTP password
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;                                      //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+//    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;     //tls
+//    $mail->Port = 587;                                      //TCP port to connect to tls
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //ssl
+    $mail->Port = 465;                                      //TCP port to connect to ssl
 
 //Recipients
     $mail->setFrom('nimesil2023@meta.ua', 'Nimesil');
@@ -39,8 +41,8 @@ try {
         $body.= '<p><strong>Ім\'я:</strong> '.$_POST['name'].'</p>';
     }
 
-    if(trim(!empty($_POST['phone']))){
-        $body.= '<p><strong>Телефон:</strong> '.$_POST['phone'].'</p>';
+    if(trim(!empty($_POST['email']))){
+        $body.= '<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
     }
 
     $mail->Body = $body;

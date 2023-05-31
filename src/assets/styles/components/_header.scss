@@ -1,11 +1,39 @@
 /*  header */
 
 .header {
-  position: absolute;
+  position: fixed;
+  z-index: 90;
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 32px;
+  transition: .3s;
+
+  &.scrolled {
+    background-color: $white;
+
+    .logo {
+
+      &__symbol {
+        fill: $dark-blue;
+      }
+
+      &__circle {
+        fill: $dark-blue;
+      }
+    }
+
+    .nav__text {
+      color: $dark-blue;
+    }
+
+    .header__hamburger-item {
+      background-color: $dark-blue;
+
+      &:before,&:after {
+        background-color: $dark-blue;
+      }
+    }
+  }
 
   .logo {
     display: block;
@@ -19,7 +47,119 @@
       svg,path {
         display: block;
         width: 100%;
+        transition: .2s ease;
       }
+    }
+
+    &__symbol {
+      fill: $white;
+    }
+
+    &__circle {
+      fill: #F8F4F0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @include media('<md') {
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__nav {
+    @include media('<md') {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background-color: $white;
+      transform: translateX(200%);
+      transition: .5s;
+    }
+
+    &.show {
+      transform: translateX(0);
+    }
+  }
+
+  &__nav-inner {
+    @include media('<md') {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+  }
+
+  &__hamburger {
+    z-index: 100;
+    display: none;
+    width: 30px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    color: $white;
+    border-radius: 5px;
+
+    @include media('<md') {
+      display: flex;
+    }
+
+    &.active {
+
+      .header__hamburger-item {
+        transform: rotate(-45deg);
+        background-color: $dark-blue;
+
+        &:before {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(90deg);
+          background-color: $dark-blue;
+        }
+        &:after {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  &__hamburger-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    border-radius: 5px;
+    transition: .2s;
+
+    &:before,&:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      border-radius: 5px;
+      transition: .2s;
+    }
+    &:before {
+      top: -6px;
+    }
+    &:after {
+      bottom: -6px;
+      width: 80%;
     }
   }
 }
